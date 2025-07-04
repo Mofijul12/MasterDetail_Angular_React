@@ -14,13 +14,13 @@ const EmployeeManager = () => {
   });
   const [isEditMode, setIsEditMode] = useState(false);
 
-  // Load skills and employees on first render
+  
   useEffect(() => {
     fetchSkills();
     fetchEmployees();
   }, []);
 
-  // Generate new EmployeeID like E001, E002 ...
+
   const generateNewEmployeeID = () => {
     if (employees.length === 0) return 'E001';
 
@@ -32,7 +32,7 @@ const EmployeeManager = () => {
     return 'E' + newIdNumber.toString().padStart(3, '0');
   };
 
-  // Auto-set new ID when employees list changes and NOT in edit mode
+  
   useEffect(() => {
     if (!isEditMode) {
       const newId = generateNewEmployeeID();
